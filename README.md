@@ -70,3 +70,6 @@ The assessment follows a structured penetration\-testing process:
 5. **File and Data Analysis**
 6. **Risk Assessment**
 7. **Recommendations and Remediation**
+
+
+[View Networkwalks Week 4 Walkthrough (PDF)](/Networkwalks-week4.pdf)
