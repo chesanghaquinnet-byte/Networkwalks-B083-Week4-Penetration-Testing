@@ -73,3 +73,15 @@ The assessment follows a structured penetration\-testing process:
 
 
 [View Networkwalks Week 4 Walkthrough](networkwalks-week-4.pdf)
+
+
+## Tools Used
+
+The following tools were used during the reconnaissance and initial security testing phase:
+
+- **WHOIS** — Domain registration and ownership information
+- **DNSRecon** — DNS enumeration and record discovery
+- **WhatWeb** — Web technology identification
+- **TheHarvester** — Public information and hostname reconnaissance
+- **cURL** — HTTP headers, webpage source inspection, and authentication testing
+- **Kali Linux** — Penetration\-testing environment
