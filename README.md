@@ -72,4 +72,4 @@ The assessment follows a structured penetration\-testing process:
 7. **Recommendations and Remediation**
 
 
-[View Networkwalks Week 4 Walkthrough (PDF)](/Networkwalks-week4.pdf)
+[View Networkwalks Week 4 Walkthrough](networkwalks-week4.pdf)
