@@ -57,3 +57,16 @@ The main objectives of the assessment were to:
 7. Analyze and recover encrypted PDF files as required by the project\.
 8. Investigate additional sensitive information exposed through the compromised environment\.
 9. Document findings, evidence, risks, and recommendations\.
+
+
+## Methodology
+
+The assessment follows a structured penetration\-testing process:
+
+1. **Footprinting & Reconnaissance**
+2. **Scanning & Enumeration**
+3. **Authentication Testing**
+4. **Exploitation and Proof of Impact**
+5. **File and Data Analysis**
+6. **Risk Assessment**
+7. **Recommendations and Remediation**
