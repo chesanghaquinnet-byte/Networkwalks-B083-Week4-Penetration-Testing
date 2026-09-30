@@ -6,12 +6,12 @@ Authorized black-box penetration testing project for Mediroza General Hospital �
 
 ## Mediroza General Hospital
 
-### Project: Penetration Testing
-### Client: Mediroza General Hospital
-### Program: Networkwalks Internship
-### Batch: B083
-### Project Type: Black-Box Penetration Testing
-### Target: https://medirozahospital.com
+Project: Penetration Testing
+Client: Mediroza General Hospital
+Program: Networkwalks Internship
+Batch: B083
+ Project Type: Black-Box Penetration Testing
+Target: https://medirozahospital.com
 
 ────────
 
