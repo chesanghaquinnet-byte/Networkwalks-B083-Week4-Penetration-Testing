@@ -527,3 +527,21 @@ The assessment began with reconnaissance and progressed through authentication t
 The findings demonstrate the importance of secure input handling, strong authentication controls, proper authorization, secure document management, protection of backup files, and appropriate handling of sensitive information.
 
 All testing was performed within the authorized scope of the Networkwalks internship project.
+
+
+
+# 👤 Author
+
+**Chesangha Quinneta**
+
+**Networkwalks 2026 Intern**
+
+LinkedIn: [https://www\.linkedin\.com/in/cyber\~\-nneta\-77a37b3ab?utm\_source=share\_via&utm\_content=profile&utm\_medium=member\_ios](https://www.linkedin.com/in/cyber~-nneta-77a37b3ab?utm_source=share_via&utm_content=profile&utm_medium=member_ios)
+
+---
+
+## Project Information
+
+**Program Name:** Cybersecurity at Networkwalks \| **Week:** 04 \| **Project:** Cybersecurity & Black\-Box Penetration Testing \| **Repository:** GitHub
+
+
