@@ -217,7 +217,7 @@ Successful exploitation of the authentication vulnerability allowed access to co
 
 ### Evidence 5 — Patient Reports
 
-![Evidence 5 - Patient Reports](patient-reports.png)
+![Evidence 5 - Patient Reports](reports.png)
 
 **Caption:** The patient portal displayed three confidential patient reports after the authentication bypass\.
 
