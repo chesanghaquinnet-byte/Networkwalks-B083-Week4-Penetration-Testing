@@ -365,4 +365,44 @@ The file was successfully downloaded and was approximately 6\.2 KB\.
 **Caption:** The exposed SQL database backup was successfully downloaded for authorized analysis\.
 
 
+# 13\. Database Backup Analysis
 
+The SQL backup contained several database tables, including:
+
+```text
+staff
+shareholders
+```
+
+---
+
+## 13\.1 Staff Information
+
+The `staff` table contained information including:
+
+- Staff names
+- Job titles
+- Departments
+- Email addresses
+- Phone numbers
+- National identification information
+- Monthly salaries
+- Employment dates
+
+One record identified:
+
+**Jameel Malik — IT Systems Administrator**
+
+This corresponded with the PDF metadata:
+
+```text
+Author: j.malik
+```
+
+This provided a connection between the PDF metadata and the staff record in the exposed database backup\.
+
+### Evidence 12 — Staff Database
+
+![Evidence 12 - Staff Database](staff-database.png)
+
+**Caption:** The exposed database backup contained staff records and sensitive employment information\.
