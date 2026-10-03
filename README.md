@@ -222,3 +222,42 @@ Successful exploitation of the authentication vulnerability allowed access to co
 **Caption:** The patient portal displayed three confidential patient reports after the authentication bypass\.
 
 
+8. Milestone 2 — PDF Password Cracking
+
+The downloaded PDF files were protected with passwords.
+
+The PDF hashes were extracted and processed using the Networkwalks Hash Calculator.
+
+The hashes began with:
+
+$pdf$
+
+John the Ripper was used with available wordlists to test the PDF passwords.
+
+Two of the PDF passwords were recovered using the available wordlist.
+
+The third PDF did not match the initial wordlist and required the John the Ripper wordlist.
+
+The third PDF password was successfully recovered.
+
+Finding
+
+Weak PDF Passwords
+
+Severity: High
+
+Impact
+
+Weak document passwords allowed protected patient documents to be recovered using password-cracking techniques.
+
+Evidence 6 — PDF Hashes
+![Pdf Hashes](pdf-hashes.png
+
+Caption: PDF password hashes were extracted for password-cracking analysis.
+
+Evidence 7 — PDF Password Cracking
+![Paswword Cracking](password-cracking.png)
+
+Caption: The PDF password was successfully recovered using a wordlist.
+
+
