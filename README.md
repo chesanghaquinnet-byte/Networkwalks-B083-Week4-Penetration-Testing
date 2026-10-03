@@ -188,7 +188,7 @@ Evidence 3 — SQL Injection Error
 Caption: SQL injection testing produced a database error, demonstrating insufficient input handling.
 
 Evidence 4 — Authentication Bypass
-![Authentication Bypass](sql-bypass.png)
+![Authentication Bypass](bypass.png)
 
 Caption: The authentication bypass successfully opened the patient portal.
 
