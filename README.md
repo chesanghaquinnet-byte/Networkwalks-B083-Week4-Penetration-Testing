@@ -185,4 +185,11 @@ An attacker could bypass the application’s authentication mechanism and gain a
 Evidence 3 — SQL Injection Error
 ![Sql Injection Error](Sql-error.png)
 
+Caption: SQL injection testing produced a database error, demonstrating insufficient input handling.
+
+Evidence 4 — Authentication Bypass
+![Authentication Bypass](sql-bypass.png)
+
+Caption: The authentication bypass successfully opened the patient portal.
+
 
