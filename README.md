@@ -215,11 +215,7 @@ The reports were downloaded for further analysis within the authorized assessmen
 
 Successful exploitation of the authentication vulnerability allowed access to confidential patient documents\.
 
-### Evidence 5 — Patient Reports
 
-![Evidence 5 - Patient Reports](reports.png)
-
-**Caption:** The patient portal displayed three confidential patient reports after the authentication bypass\.
 
 
 # 8\. Milestone 2 — PDF Password Cracking
