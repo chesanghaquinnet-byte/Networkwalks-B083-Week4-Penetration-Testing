@@ -147,5 +147,5 @@ An attacker could identify valid usernames and use them for further attacks\.
 
 ### Evidence 2 — Username Enumeration
 
-![Username Enumeration](username-enumeration.png)
+![Username Enumeration](username.png)
 
