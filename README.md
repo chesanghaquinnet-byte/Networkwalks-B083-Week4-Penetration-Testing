@@ -97,8 +97,8 @@ The robots.txt file revealed the following paths:
 /staff/
 /old/
 
-Evidence — robots.txt
+###Evidence
+![ robots.txt](robots.png)
 
-Evidence - robots.txt
 
-Caption: robots.txt exposed /patient/, /staff/, and /old/ directories.
+
