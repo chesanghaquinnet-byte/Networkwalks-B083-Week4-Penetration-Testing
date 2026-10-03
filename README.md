@@ -422,3 +422,108 @@ The `shareholders` table contained:
 ![Evidence 13 - Shareholders Database](shareholders-database.png)
 
 **Caption:** The exposed database backup contained shareholder information\.
+
+
+### 14. Sensitive Database Information Exposure
+
+The exposed database backup contained confidential organizational information, including staff salary information and shareholder information.
+
+### Finding
+
+Sensitive Database Information Exposure
+
+### Severity: Critical
+
+### Impact
+
+Public exposure of the database backup could disclose confidential employee and organizational information.
+
+Sensitive information such as national IDs, phone numbers, and personal email addresses should not be exposed publicly.
+
+────────
+
+15. Findings Summary
+
+|#|Finding                                |Severity|
+|-|---------------------------------------|--------|
+|1|Username Enumeration                   |Medium  |
+|2|SQL Injection / Authentication Bypass  |Critical|
+|3|Unauthorized Access to Patient Reports |High    |
+|4|Weak PDF Passwords                     |High    |
+|5|Sensitive PDF Metadata                 |Medium  |
+|6|Exposed Backup Directory               |Critical|
+|7|Sensitive Database Information Exposure|Critical|
+
+────────
+
+# 16\. Recommendations
+
+### 16.1 Prevent SQL Injection
+
+Use prepared statements and parameterized queries instead of directly inserting user input into SQL queries.
+
+Input validation should also be implemented.
+
+────────
+
+### 16.2 Prevent Username Enumeration
+
+The application should return a generic authentication error such as:
+
+Invalid username or password.
+
+The application should not reveal whether a username exists.
+
+────────
+
+### 16.3 Strengthen Access Controls
+
+Patient reports should only be accessible to properly authenticated and authorized users.
+
+Authorization checks should be performed whenever a document is requested.
+
+────────
+
+### 16.4 Use Strong Document Passwords
+
+Sensitive PDF documents should use strong, unique passwords.
+
+Passwords should not be easily guessable or vulnerable to common wordlists.
+
+────────
+
+### 16.5 Remove Sensitive Metadata
+
+Sensitive metadata should be removed from documents before publication or distribution.
+
+Internal usernames and operational notes should not be unnecessarily embedded in documents.
+
+────────
+
+### 16.6 Remove Public Backup Files
+
+Database backups should never be stored inside publicly accessible web directories.
+
+The /old/ directory should be removed or properly restricted.
+
+Directory listing should also be disabled.
+
+────────
+
+### 16.7 Secure Database Backups
+
+Database backups should be stored in a secure location with appropriate access controls.
+
+Backups should not be publicly accessible and should not unnecessarily contain sensitive information.
+
+────────
+
+# 17\. Conclusion
+
+The assessment demonstrated how multiple security weaknesses could be identified and chained together during an authorized black-box penetration test.
+
+The assessment began with reconnaissance and progressed through authentication testing, SQL injection testing, document access, password recovery, PDF metadata analysis, and investigation of an exposed database backup.
+
+The findings demonstrate the importance of secure input handling, strong authentication controls, proper authorization, secure document management, protection of backup files, and appropriate handling of sensitive information.
+
+All testing was performed within the authorized scope of the Networkwalks internship project.
