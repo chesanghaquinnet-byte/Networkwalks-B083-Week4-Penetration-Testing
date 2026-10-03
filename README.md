@@ -101,4 +101,51 @@ The robots.txt file revealed the following paths:
 ![ robots.txt](robots.png)
 
 
+# 5\. Milestone 1 — Initial Access
+
+## 5\.1 Patient Login Page
+
+The `/patient/` directory led to the patient login page:
+
+```text
+https://medirozahospital.com/patient/login.php
+```
+
+The authentication mechanism was tested to determine how the application responded to different usernames and passwords\.
+
+---
+
+## 5\.2 Username Enumeration
+
+Different usernames were tested against the login form\.
+
+The application returned different messages depending on whether the username existed\.
+
+Examples included:
+
+```text
+Username not found
+```
+
+and:
+
+```text
+Incorrect password
+```
+
+This difference allowed valid usernames to be identified\.
+
+### Finding
+
+**Username Enumeration**
+
+**Severity:** Medium
+
+### Impact
+
+An attacker could identify valid usernames and use them for further attacks\.
+
+### Evidence 2 — Username Enumeration
+
+![Username Enumeration](username-enumeration.png)
 
