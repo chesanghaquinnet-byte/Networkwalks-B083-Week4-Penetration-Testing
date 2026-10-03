@@ -247,12 +247,16 @@ Weak PDF Passwords
 Weak document passwords allowed protected patient documents to be recovered using password-cracking techniques.
 
 ### Evidence 6 — PDF Hashes
-![Pdf Hashes](pdf-hashes.png)
+![Pdf Hashes](pdf1-hashes.png)
+![Pdf Hashes](pdf2-hashes.png)
+![Pdf Hashes](pdf3-hashes.png)
 
 Caption: PDF password hashes were extracted for password-cracking analysis.
 
 ### Evidence 7 — PDF Password Cracking
-![Paswword Cracking](password-cracking.png)
+![Paswword Cracking](pdf1-password.png)
+![Password Ccracking](pdf2-password.png)
+![Password Cracking](pdf3-password.png)
 
 **Caption:** The PDF password was successfully recovered using a wordlist.
 
