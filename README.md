@@ -437,16 +437,17 @@ The decrypted PDF metadata showed:
 * Creator: Mediroza CMS 1.4.2
 * Producer: Mediroza Lab Reporting Module
 
-The j.malik author identifier was then compared with the staff records found in the exposed SQL database.
+The `j.malik` author identifier was then compared with the staff records found in the exposed SQL database\.
 
 The staff table contained:
 
-Jameel Malik — IT Systems Administrator — IT Department
+**Jameel Malik — IT Systems Administrator — IT Department**
 
-His email address in the database also used the j.malik identifier.
+His email address in the database also used the `j.malik` identifier\.
 
 This connected the evidence together:
 
+```text
 Patient Report 3
        ↓
 PDF Metadata
@@ -464,6 +465,9 @@ PDF comment references /old
 /old/ directory
        ↓
 mediroza_db_backup_2019.sql
+```
+
+
 
 This demonstrated how information from the patient PDF could be correlated with information in the exposed database backup.
 
