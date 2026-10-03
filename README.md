@@ -149,3 +149,40 @@ An attacker could identify valid usernames and use them for further attacks\.
 
 ![Username Enumeration](username.png)
 
+
+6. SQL Injection and Authentication Bypass
+
+6.1 SQL Injection Testing
+
+The username field was tested with:
+
+admin'
+
+The application returned a SQL syntax error, indicating that user input was being incorporated into a database query.
+
+────────
+
+6.2 Authentication Bypass
+
+The following authorized lab payload was then tested:
+
+admin' --
+
+The application accepted the input and provided access to the patient portal.
+
+The portal displayed three patient reports.
+
+Finding
+
+SQL Injection / Authentication Bypass
+
+Severity: Critical
+
+Impact
+
+An attacker could bypass the application’s authentication mechanism and gain access to restricted functionality.
+
+Evidence 3 — SQL Injection Error
+
+
+
