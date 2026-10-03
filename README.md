@@ -365,7 +365,7 @@ The file was successfully downloaded and was approximately 6\.2 KB\.
 **Caption:** The exposed SQL database backup was successfully downloaded for authorized analysis\.
 
 
-13. Database Backup Analysis
+# 13\. Database Backup Analysis
 
 The downloaded SQL backup file was opened and reviewed to identify sensitive information stored in the database.
 
@@ -373,51 +373,56 @@ The INSERT INTO statements for the staff and shareholders tables were converted 
 
 ### Staff Database
 
-ID	Name	Job Title	Department	Monthly Salary (ZAR)
-1	Dr. Rajesh Naidoo	Chief Pathologist	Diagnostics Lab	138,000
-2	Sarah Botha	Chief Financial Officer	Finance	152,000
-3	Dr. Johan van der Merwe	Medical Director	Management	160,000
-4	Dr. Anita Naicker	Consultant Cardiologist	Cardiology	132,000
-5	Dr. Ahmed Kara	Consultant Physician	Internal Medicine	128,000
-6	Dr. Yusuf Cassim	Senior Registrar	Emergency & Trauma	74,000
-7	Michael Roberts	HR Director	Human Resources	96,000
-8	Susan Pretorius	HR Officer	Human Resources	32,000
-9	Jameel Malik	IT Systems Administrator	IT	58,000
-10	Thabo Molefe	Network Engineer	IT	46,000
-11	Nomvula Khumalo	Registered Nurse	Emergency & Trauma	34,000
-12	Lerato Mokoena	Registered Nurse	Pediatrics	33,000
-13	Bongani Ndlovu	Registered Nurse	Cardiology	35,000
-14	Zanele Mahlangu	Nursing Sister	Theatre	42,000
-15	Kagiso Sithole	Pharmacist	Pharmacy	61,000
-16	Naledi Zulu	Pharmacy Assistant	Pharmacy	26,000
-17	Themba Nkosi	Radiographer	Radiology	44,000
-18	Palesa Radebe	Radiographer	Radiology	43,000
-19	Deepak Pillay	Lab Technologist	Diagnostics Lab	41,000
-20	Kavitha Govender	Lab Technician	Diagnostics Lab	35,000
-21	Dr. Suresh Moodley	Consultant Radiologist	Radiology	130,000
-22	Dr. Fatima Patel	Pediatrician	Pediatrics	118,000
-23	Nisha Singh	Physiotherapist	Rehabilitation	48,000
-24	Dr. Vikram Chetty	Anaesthetist	Theatre	135,000
-25	David Smith	Facilities Manager	Operations	52,000
-26	Karen O’Connor	Billing Administrator	Finance	29,000
-27	James Wilson	Security Supervisor	Operations	27,000
-28	Linda Fourie	Receptionist	Front Office	19,000
-29	Peter van Wyk	Procurement Officer	Supply Chain	38,000
-30	Andile Mbeki	Ward Clerk	Administration	21,000
+### Staff Database
+
+|ID|Name                   |Job Title               |Department        |Monthly Salary (ZAR)|
+|-:|-----------------------|------------------------|------------------|-------------------:|
+|1 |Dr. Rajesh Naidoo      |Chief Pathologist       |Diagnostics Lab   |138,000             |
+|2 |Sarah Botha            |Chief Financial Officer |Finance           |152,000             |
+|3 |Dr. Johan van der Merwe|Medical Director        |Management        |160,000             |
+|4 |Dr. Anita Naicker      |Consultant Cardiologist |Cardiology        |132,000             |
+|5 |Dr. Ahmed Kara         |Consultant Physician    |Internal Medicine |128,000             |
+|6 |Dr. Yusuf Cassim       |Senior Registrar        |Emergency & Trauma|74,000              |
+|7 |Michael Roberts        |HR Director             |Human Resources   |96,000              |
+|8 |Susan Pretorius        |HR Officer              |Human Resources   |32,000              |
+|9 |Jameel Malik           |IT Systems Administrator|IT                |58,000              |
+|10|Thabo Molefe           |Network Engineer        |IT                |46,000              |
+|11|Nomvula Khumalo        |Registered Nurse        |Emergency & Trauma|34,000              |
+|12|Lerato Mokoena         |Registered Nurse        |Pediatrics        |33,000              |
+|13|Bongani Ndlovu         |Registered Nurse        |Cardiology        |35,000              |
+|14|Zanele Mahlangu        |Nursing Sister          |Theatre           |42,000              |
+|15|Kagiso Sithole         |Pharmacist              |Pharmacy          |61,000              |
+|16|Naledi Zulu            |Pharmacy Assistant      |Pharmacy          |26,000              |
+|17|Themba Nkosi           |Radiographer            |Radiology         |44,000              |
+|18|Palesa Radebe          |Radiographer            |Radiology         |43,000              |
+|19|Deepak Pillay          |Lab Technologist        |Diagnostics Lab   |41,000              |
+|20|Kavitha Govender       |Lab Technician          |Diagnostics Lab   |35,000              |
+|21|Dr. Suresh Moodley     |Consultant Radiologist  |Radiology         |130,000             |
+|22|Dr. Fatima Patel       |Pediatrician            |Pediatrics        |118,000             |
+|23|Nisha Singh            |Physiotherapist         |Rehabilitation    |48,000              |
+|24|Dr. Vikram Chetty      |Anaesthetist            |Theatre           |135,000             |
+|25|David Smith            |Facilities Manager      |Operations        |52,000              |
+|26|Karen O’Connor         |Billing Administrator   |Finance           |29,000              |
+|27|James Wilson           |Security Supervisor     |Operations        |27,000              |
+|28|Linda Fourie           |Receptionist            |Front Office      |19,000              |
+|29|Peter van Wyk          |Procurement Officer     |Supply Chain      |38,000              |
+|30|Andile Mbeki           |Ward Clerk              |Administration    |21,000              |
 
 ### Shareholders Database
 
-ID	Shareholder	Share Percentage	Shares Held	Share Class
-1	Dr. Rajesh Naidoo	18%	180,000	Ordinary
-2	Cedar Health Holdings (Pty) Ltd	15%	150,000	Ordinary
-3	Dr. Johan van der Merwe	12%	120,000	Ordinary
-4	Reddy Family Trust	11%	110,000	Ordinary
-5	Thabo Molefe	10%	100,000	Ordinary
-6	Sarah Botha	9%	90,000	Ordinary
-7	Dr. Ahmed Kara	8%	80,000	Preferential
-8	Naledi Zulu	7%	70,000	Ordinary
-9	Michael Roberts	6%	60,000	Ordinary
-10	Dr. Vikram Chetty	4%	40,000	Preferential
+
+|ID|Shareholder                    |Share Percentage|Shares Held|Share Class |
+|-:|-------------------------------|---------------:|----------:|------------|
+|1 |Dr. Rajesh Naidoo              |18%             |180,000    |Ordinary    |
+|2 |Cedar Health Holdings (Pty) Ltd|15%             |150,000    |Ordinary    |
+|3 |Dr. Johan van der Merwe        |12%             |120,000    |Ordinary    |
+|4 |Reddy Family Trust             |11%             |110,000    |Ordinary    |
+|5 |Thabo Molefe                   |10%             |100,000    |Ordinary    |
+|6 |Sarah Botha                    |9%              |90,000     |Ordinary    |
+|7 |Dr. Ahmed Kara                 |8%              |80,000     |Preferential|
+|8 |Naledi Zulu                    |7%              |70,000     |Ordinary    |
+|9 |Michael Roberts                |6%              |60,000     |Ordinary    |
+|10|Dr. Vikram Chetty              |4%              |40,000     |Preferential|
 
 **Note:** Sensitive direct identifiers such as national ID numbers, phone numbers and email addresses are not included in this public report.
 
