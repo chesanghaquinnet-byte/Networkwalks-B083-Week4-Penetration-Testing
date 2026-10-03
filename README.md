@@ -251,7 +251,7 @@ Impact
 Weak document passwords allowed protected patient documents to be recovered using password-cracking techniques.
 
 Evidence 6 — PDF Hashes
-![Pdf Hashes](pdf-hashes.png
+![Pdf Hashes](pdf-hashes.png)
 
 Caption: PDF password hashes were extracted for password-cracking analysis.
 
