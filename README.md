@@ -365,168 +365,150 @@ The file was successfully downloaded and was approximately 6\.2 KB\.
 **Caption:** The exposed SQL database backup was successfully downloaded for authorized analysis\.
 
 
-# 13\. Database Backup Analysis
+13. Database Backup Analysis
 
-The SQL backup contained several database tables, including:
+The downloaded SQL backup file was opened and reviewed to identify sensitive information stored in the database.
 
-```text
-staff
-shareholders
-```
+The INSERT INTO statements for the staff and shareholders tables were converted into readable tables for easier analysis.
 
----
+### Staff Database
 
-## 13\.1 Staff Information
+ID	Name	Job Title	Department	Monthly Salary (ZAR)
+1	Dr. Rajesh Naidoo	Chief Pathologist	Diagnostics Lab	138,000
+2	Sarah Botha	Chief Financial Officer	Finance	152,000
+3	Dr. Johan van der Merwe	Medical Director	Management	160,000
+4	Dr. Anita Naicker	Consultant Cardiologist	Cardiology	132,000
+5	Dr. Ahmed Kara	Consultant Physician	Internal Medicine	128,000
+6	Dr. Yusuf Cassim	Senior Registrar	Emergency & Trauma	74,000
+7	Michael Roberts	HR Director	Human Resources	96,000
+8	Susan Pretorius	HR Officer	Human Resources	32,000
+9	Jameel Malik	IT Systems Administrator	IT	58,000
+10	Thabo Molefe	Network Engineer	IT	46,000
+11	Nomvula Khumalo	Registered Nurse	Emergency & Trauma	34,000
+12	Lerato Mokoena	Registered Nurse	Pediatrics	33,000
+13	Bongani Ndlovu	Registered Nurse	Cardiology	35,000
+14	Zanele Mahlangu	Nursing Sister	Theatre	42,000
+15	Kagiso Sithole	Pharmacist	Pharmacy	61,000
+16	Naledi Zulu	Pharmacy Assistant	Pharmacy	26,000
+17	Themba Nkosi	Radiographer	Radiology	44,000
+18	Palesa Radebe	Radiographer	Radiology	43,000
+19	Deepak Pillay	Lab Technologist	Diagnostics Lab	41,000
+20	Kavitha Govender	Lab Technician	Diagnostics Lab	35,000
+21	Dr. Suresh Moodley	Consultant Radiologist	Radiology	130,000
+22	Dr. Fatima Patel	Pediatrician	Pediatrics	118,000
+23	Nisha Singh	Physiotherapist	Rehabilitation	48,000
+24	Dr. Vikram Chetty	Anaesthetist	Theatre	135,000
+25	David Smith	Facilities Manager	Operations	52,000
+26	Karen O’Connor	Billing Administrator	Finance	29,000
+27	James Wilson	Security Supervisor	Operations	27,000
+28	Linda Fourie	Receptionist	Front Office	19,000
+29	Peter van Wyk	Procurement Officer	Supply Chain	38,000
+30	Andile Mbeki	Ward Clerk	Administration	21,000
 
-The `staff` table contained information including:
+### Shareholders Database
 
-- Staff names
-- Job titles
-- Departments
-- Email addresses
-- Phone numbers
-- National identification information
-- Monthly salaries
-- Employment dates
+ID	Shareholder	Share Percentage	Shares Held	Share Class
+1	Dr. Rajesh Naidoo	18%	180,000	Ordinary
+2	Cedar Health Holdings (Pty) Ltd	15%	150,000	Ordinary
+3	Dr. Johan van der Merwe	12%	120,000	Ordinary
+4	Reddy Family Trust	11%	110,000	Ordinary
+5	Thabo Molefe	10%	100,000	Ordinary
+6	Sarah Botha	9%	90,000	Ordinary
+7	Dr. Ahmed Kara	8%	80,000	Preferential
+8	Naledi Zulu	7%	70,000	Ordinary
+9	Michael Roberts	6%	60,000	Ordinary
+10	Dr. Vikram Chetty	4%	40,000	Preferential
 
-One record identified:
+**Note:** Sensitive direct identifiers such as national ID numbers, phone numbers and email addresses are not included in this public report.
 
-**Jameel Malik — IT Systems Administrator**
+### 14. Connecting the PDF Metadata to the Database
 
-This corresponded with the PDF metadata:
+The PDF metadata provided an important clue that connected the exposed patient report to the database backup.
 
-```text
+The decrypted PDF metadata showed:
+
+* Author: j.malik
+* Comments: DB backup moved to /old before site migration, do not delete
+* Creator: Mediroza CMS 1.4.2
+* Producer: Mediroza Lab Reporting Module
+
+The j.malik author identifier was then compared with the staff records found in the exposed SQL database.
+
+The staff table contained:
+
+Jameel Malik — IT Systems Administrator — IT Department
+
+His email address in the database also used the j.malik identifier.
+
+This connected the evidence together:
+
+Patient Report 3
+       ↓
+PDF Metadata
+       ↓
 Author: j.malik
-```
+       ↓
+Staff Database
+       ↓
+Jameel Malik
+       ↓
+IT Systems Administrator
+       ↓
+PDF comment references /old
+       ↓
+/old/ directory
+       ↓
+mediroza_db_backup_2019.sql
 
-This provided a connection between the PDF metadata and the staff record in the exposed database backup\.
+This demonstrated how information from the patient PDF could be correlated with information in the exposed database backup.
 
-### Evidence 12 — Staff Database
+### 15. Security Impact
 
-![Evidence 12 - Staff Database](staff-database.png)
+The exposed backup contained sensitive organizational information, including staff information, salaries and shareholder information.
 
-**Caption:** The exposed database backup contained staff records and sensitive employment information\.
+The combination of:
 
+* Authentication bypass
+* Access to confidential patient reports
+* Weak PDF passwords
+* Sensitive PDF metadata
+* Directory listing enabled on /old/
+* Publicly accessible database backup
+* Sensitive information stored in the backup
 
-## 13\.2 Shareholder Information
+created multiple security risks.
 
-The `shareholders` table contained:
+The exposed backup could allow an attacker to obtain information that should not be publicly accessible.
 
-- Shareholder names
-- Share percentages
-- Number of shares
-- Share classes
+### 16. Recommendations
 
-### Evidence 13 — Shareholders Database
-
-![Evidence 13 - Shareholders Database](shareholders-database.png)
-
-**Caption:** The exposed database backup contained shareholder information\.
-
-
-### 14. Sensitive Database Information Exposure
-
-The exposed database backup contained confidential organizational information, including staff salary information and shareholder information.
-
-### Finding
-
-Sensitive Database Information Exposure
-
-### Severity: Critical
-
-### Impact
-
-Public exposure of the database backup could disclose confidential employee and organizational information.
-
-Sensitive information such as national IDs, phone numbers, and personal email addresses should not be exposed publicly.
-
-────────
-
-15. Findings Summary
-
-|#|Finding                                |Severity|
-|-|---------------------------------------|--------|
-|1|Username Enumeration                   |Medium  |
-|2|SQL Injection / Authentication Bypass  |Critical|
-|3|Unauthorized Access to Patient Reports |High    |
-|4|Weak PDF Passwords                     |High    |
-|5|Sensitive PDF Metadata                 |Medium  |
-|6|Exposed Backup Directory               |Critical|
-|7|Sensitive Database Information Exposure|Critical|
-
-────────
-
-# 16\. Recommendations
-
-### 16.1 Prevent SQL Injection
-
-Use prepared statements and parameterized queries instead of directly inserting user input into SQL queries.
-
-Input validation should also be implemented.
-
-────────
-
-### 16.2 Prevent Username Enumeration
-
-The application should return a generic authentication error such as:
-
-Invalid username or password.
-
-The application should not reveal whether a username exists.
-
-────────
-
-### 16.3 Strengthen Access Controls
-
-Patient reports should only be accessible to properly authenticated and authorized users.
-
-Authorization checks should be performed whenever a document is requested.
-
-────────
-
-### 16.4 Use Strong Document Passwords
-
-Sensitive PDF documents should use strong, unique passwords.
-
-Passwords should not be easily guessable or vulnerable to common wordlists.
-
-────────
-
-### 16.5 Remove Sensitive Metadata
-
-Sensitive metadata should be removed from documents before publication or distribution.
-
-Internal usernames and operational notes should not be unnecessarily embedded in documents.
-
-────────
-
-### 16.6 Remove Public Backup Files
-
-Database backups should never be stored inside publicly accessible web directories.
-
-The /old/ directory should be removed or properly restricted.
-
-Directory listing should also be disabled.
-
-────────
-
-### 16.7 Secure Database Backups
-
-Database backups should be stored in a secure location with appropriate access controls.
-
-Backups should not be publicly accessible and should not unnecessarily contain sensitive information.
-
-────────
+1. Use prepared statements
+    * Prevent SQL injection by using parameterized queries.
+2. Fix authentication errors
+    * Avoid revealing whether a username exists.
+    * Use a consistent login error message.
+3. Implement proper access controls
+    * Patient reports should only be accessible to authorized users.
+4. Use strong unique passwords
+    * Avoid weak or commonly used passwords for encrypted documents.
+5. Remove sensitive PDF metadata
+    * Review and sanitize metadata before publishing or distributing documents.
+6. Disable directory listing
+    * Directory browsing should not be enabled on sensitive directories.
+7. Remove old backups from public web directories
+    * Database backups should never be stored in publicly accessible web folders.
+8. Protect database backups
+    * Store backups securely with appropriate access controls and encryption.
 
 # 17\. Conclusion
 
-The assessment demonstrated how multiple security weaknesses could be identified and chained together during an authorized black-box penetration test.
+This assessment identified several security weaknesses in the Mediroza Hospital web application.
 
-The assessment began with reconnaissance and progressed through authentication testing, SQL injection testing, document access, password recovery, PDF metadata analysis, and investigation of an exposed database backup.
+The most significant issues included SQL injection leading to authentication bypass, exposure of confidential patient reports, weak PDF passwords, sensitive metadata, and an exposed database backup containing sensitive organizational information.
 
-The findings demonstrate the importance of secure input handling, strong authentication controls, proper authorization, secure document management, protection of backup files, and appropriate handling of sensitive information.
+The assessment demonstrates how multiple small weaknesses can be chained together to expose increasingly sensitive information.
 
-All testing was performed within the authorized scope of the Networkwalks internship project.
+All testing was performed within the authorized scope of the Networkwalks Week 4 educational penetration testing project.
 
 
 
