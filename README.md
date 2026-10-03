@@ -406,3 +406,19 @@ This provided a connection between the PDF metadata and the staff record in the 
 ![Evidence 12 - Staff Database](staff-database.png)
 
 **Caption:** The exposed database backup contained staff records and sensitive employment information\.
+
+
+## 13\.2 Shareholder Information
+
+The `shareholders` table contained:
+
+- Shareholder names
+- Share percentages
+- Number of shares
+- Share classes
+
+### Evidence 13 — Shareholders Database
+
+![Evidence 13 - Shareholders Database](shareholders-database.png)
+
+**Caption:** The exposed database backup contained shareholder information\.
