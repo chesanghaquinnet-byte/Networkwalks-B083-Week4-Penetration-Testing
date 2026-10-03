@@ -1,87 +1,104 @@
 # Networkwalks-B083-Week4-Penetration-Testing
-Authorized black-box penetration testing project for Mediroza General Hospital — Networkwalks Week 4.
+Authorized black-box penetration testing project for Mediroza General Hospital — Networkwalks Week 
 
 
-# Networkwalks Week 4 – Penetration Testing
+# Networkwalks Week 4 Penetration Testing Project
 
-## Mediroza General Hospital
+## Client
 
-#### Project: Penetration Testing
-#### Client: Mediroza General Hospital
-#### Program: Networkwalks Internship
-#### Batch: B083
-#### Project Type: Black-Box Penetration Testing
-#### Target: https://medirozahospital.com
+**Mediroza General Hospital**
 
-────────
+## Assessment Type
 
-## Project Overview
+Authorized Black\-Box Web Application Penetration Test
 
-This project was carried out as part of the Networkwalks Week 4 cybersecurity internship.
+## Scope
 
-The objective was to perform an authorized black-box penetration test against the Mediroza General Hospital website. The assessment focused on identifying exposed services, application entry points, authentication weaknesses, and potential security vulnerabilities within the approved target.
+**Target:** `https://medirozahospital.com`
 
-Testing was performed within the authorized scope provided by the project brief.
+Testing was performed only against the authorized target as part of the Networkwalks internship project\.
 
+1. Executive Summary
 
-## Scope and Authorization
+This project involved an authorized black-box penetration test of the Mediroza General Hospital web application.
 
-The assessment was limited to:
+The assessment followed a structured process:
 
-- Target domain: `medirozahospital.com`
-- Target website: `https://medirozahospital.com`
+1. Reconnaissance
+2. Scanning and enumeration
+3. Initial access
+4. Password cracking
+5. Deep reconnaissance
+6. Findings and recommendations
 
-The project authorization allowed security testing of the target to identify and demonstrate vulnerabilities\.
+Several security weaknesses were identified, including username enumeration, SQL injection, authentication bypass, unauthorized access to patient reports, weak PDF passwords, sensitive PDF metadata, an exposed backup directory, and sensitive information contained in an accessible database backup.
 
-### Testing Restrictions
+# 2\. Tools Used
 
-The following restrictions applied:
+The following tools and techniques were used during the assessment:
 
-- Testing was limited to the target domain\.
-- No social engineering was performed\.
-- No Denial\-of\-Service &#40;DoS&#41; testing was performed\.
-- No systems outside the authorized scope were intentionally tested\.
+- WHOIS
+- DNSRecon
+- WhatWeb
+- theHarvester
+- CRT\.sh
+- cURL
+- Nmap
+- Browser
+- Networkwalks Hash Calculator
+- John the Ripper
+- qpdf
+- ExifTool
+- wget
+
+# 3\. Methodology
+
+The assessment followed this methodology:
+
+**Footprinting → Scanning & Enumeration → Gaining Access → Password Cracking → Deep Reconnaissance → Findings & Recommendations**
 
 ---
 
-## Objectives
+# 4\. Reconnaissance
 
-The main objectives of the assessment were to:
+## 4\.1 WHOIS
 
-1. Perform reconnaissance and footprinting of the target\.
-2. Identify technologies and publicly exposed information\.
-3. Identify accessible application entry points\.
-4. Assess authentication mechanisms\.
-5. Identify and demonstrate security weaknesses where authorized\.
-6. Investigate access to protected patient laboratory reports\.
-7. Analyze and recover encrypted PDF files as required by the project\.
-8. Investigate additional sensitive information exposed through the compromised environment\.
-9. Document findings, evidence, risks, and recommendations\.
+WHOIS was used to gather domain registration information about the target\.
 
+The information collected included the domain registrar, nameservers, creation date, and DNSSEC status\.
 
-## Methodology
+---
 
-The assessment follows a structured penetration\-testing process:
+## 4\.2 DNS Reconnaissance
 
-1. **Footprinting & Reconnaissance**
-2. **Scanning & Enumeration**
-3. **Authentication Testing**
-4. **Exploitation and Proof of Impact**
-5. **File and Data Analysis**
-6. **Risk Assessment**
-7. **Recommendations and Remediation**
+DNSRecon was used to gather DNS\-related information about the target domain\.
 
+---
 
-[View Networkwalks Week 4 Walkthrough](networkwalks-week-4.pdf)
+## 4\.3 Web Technology Enumeration
 
+WhatWeb was used to identify technologies and server information associated with the target\.
 
-## Tools Used
+The scan identified information such as the web server technology and other HTTP\-related details\.
 
-The following tools were used during the reconnaissance and initial security testing phase:
+4.4 HTTP Header and Website Enumeration
 
-- **WHOIS** — Domain registration and ownership information
-- **DNSRecon** — DNS enumeration and record discovery
-- **WhatWeb** — Web technology identification
-- **TheHarvester** — Public information and hostname reconnaissance
-- **cURL** — HTTP headers, webpage source inspection, and authentication testing
-- **Kali Linux** — Penetration\-testing environment
+cURL was used to inspect HTTP responses and website resources.
+
+The following commands were used:
+
+curl -I https://medirozahospital.com
+
+curl https://medirozahospital.com/robots.txt
+
+The robots.txt file revealed the following paths:
+
+/patient/
+/staff/
+/old/
+
+Evidence — robots.txt
+
+Evidence - robots.txt
+
+Caption: robots.txt exposed /patient/, /staff/, and /old/ directories.
