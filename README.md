@@ -309,4 +309,37 @@ Metadata can unintentionally disclose internal usernames and operational informa
 Caption: The decrypted PDF was inspected with ExifTool, revealing the author j.malik and an internal comment referencing the /old backup directory.
 
 
+# 11\. Exposed Backup Directory
+
+The `/old/` directory discovered during reconnaissance was accessed:
+
+```text
+https://medirozahospital.com/old/
+```
+
+Directory listing was enabled\.
+
+The following database backup was discovered:
+
+```text
+mediroza_db_backup_2019.sql
+```
+
+### Finding
+
+**Forgotten Backup Directory with Directory Listing**
+
+**Severity:** Critical
+
+### Impact
+
+An attacker could discover and download sensitive files that should not be publicly accessible\.
+
+### Evidence 10 — Exposed `/old/` Directory
+
+![Evidence 10 - Exposed Backup Directory](old-directory.png)
+
+**Caption:** Directory listing exposed the database backup file `mediroza_db_backup_2019.sql`\.
+
+
 
