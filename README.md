@@ -261,3 +261,52 @@ Caption: PDF password hashes were extracted for password-cracking analysis.
 **Caption:** The PDF password was successfully recovered using a wordlist.
 
 
+# 9\. PDF Decryption
+
+The `qpdf` utility was used to decrypt the third PDF after recovering its password\.
+
+The command used was:
+
+```bash
+qpdf --password="$PASSWORD" --decrypt patient_report_3.pdf report3_open.pdf
+```
+
+The decrypted file was successfully created as:
+
+```text
+report3_open.pdf
+```
+
+
+# 10\. Milestone 3 — PDF Metadata Analysis
+
+ExifTool was used to inspect the metadata of the decrypted PDF.
+
+The command used was:
+
+exiftool report3_open.pdf
+
+Important metadata discovered included:
+
+Author   : j.malik
+Comments : DB backup moved to /old before site migration, do not delete
+
+This information provided a clue for further investigation of the /old/ directory.
+
+### Finding
+
+Sensitive Information in PDF Metadata
+
+### Severity: Medium
+
+### Impact
+
+Metadata can unintentionally disclose internal usernames and operational information that may assist further attacks.
+
+### Evidence 8 — PDF Decryption and Metadata
+![Pdf Decryption and Metadata](pdf-decryption-metadata.png)
+
+Caption: The decrypted PDF was inspected with ExifTool, revealing the author j.malik and an internal comment referencing the /old backup directory.
+
+
+
