@@ -193,3 +193,32 @@ Evidence 4 — Authentication Bypass
 Caption: The authentication bypass successfully opened the patient portal.
 
 
+# 7\. Unauthorized Access to Patient Reports
+
+After successfully bypassing authentication, the patient portal displayed:
+
+```text
+patient_report_1.pdf
+patient_report_2.pdf
+patient_report_3.pdf
+```
+
+The reports were downloaded for further analysis within the authorized assessment\.
+
+### Finding
+
+**Unauthorized Access to Patient Reports**
+
+**Severity:** High
+
+### Impact
+
+Successful exploitation of the authentication vulnerability allowed access to confidential patient documents\.
+
+### Evidence 5 — Patient Reports
+
+![Evidence 5 - Patient Reports](patient-reports.png)
+
+**Caption:** The patient portal displayed three confidential patient reports after the authentication bypass\.
+
+
