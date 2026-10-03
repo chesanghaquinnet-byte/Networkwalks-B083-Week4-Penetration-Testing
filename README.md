@@ -183,7 +183,7 @@ Impact
 An attacker could bypass the application’s authentication mechanism and gain access to restricted functionality.
 
 Evidence 3 — SQL Injection Error
-![Sql Injection Error](Sql-error.png)
+![Sql Injection Error](error.png)
 
 Caption: SQL injection testing produced a database error, demonstrating insufficient input handling.
 
