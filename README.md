@@ -342,4 +342,27 @@ An attacker could discover and download sensitive files that should not be publi
 **Caption:** Directory listing exposed the database backup file `mediroza_db_backup_2019.sql`\.
 
 
+# 12\. Database Backup Download
+
+The exposed database backup was downloaded using:
+
+```bash
+wget https://medirozahospital.com/old/mediroza_db_backup_2019.sql
+```
+
+The downloaded file was confirmed using:
+
+```bash
+ls -lh mediroza_db_backup_2019.sql
+```
+
+The file was successfully downloaded and was approximately 6\.2 KB\.
+
+### Evidence 11 — Database Backup Download
+
+![Evidence 11 - Database Backup Download](database-download.png)
+
+**Caption:** The exposed SQL database backup was successfully downloaded for authorized analysis\.
+
+
 
